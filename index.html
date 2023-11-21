@@ -1,33 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>File List</title>
+    <title>My File Download Website</title>
 </head>
 <body>
-    <h1>Files:</h1>
-    <div id="fileList"></div>
-
-    <script>
-        // URL of the folder you want to list files from
-        var folder = "https://github.com/TexturePackPorts/texture-packs/tree/main/packs"; 
-
-        fetch(folder)
-            .then(response => response.text())
-            .then(text => {
-                var parser = new DOMParser();
-                var doc = parser.parseFromString(text, "text/html");
-                var links = Array.from(doc.getElementsByTagName("a"));
-                links.forEach(link => {
-                    if (link.href.startsWith(folder)) {
-                        var listItem = document.createElement("li");
-                        var anchor = document.createElement("a");
-                        anchor.href = link.href;
-                        anchor.textContent = link.textContent;
-                        listItem.appendChild(anchor);
-                        document.getElementById("fileList").appendChild(listItem);
-                    }
-                });
-            });
-    </script>
+    <h1>Welcome to my file download website!</h1>
+    <p>Click the link below to download the file:</p>
+    <a href="Scopes Default Edit" download>Download File</a>
 </body>
 </html>
