@@ -1,14 +1,64 @@
 <!DOCTYPE html>
 <html>
-    <body>
+<head>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+}
 
-        <h2>File Upload</h2>
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
 
-        <form action="/upload" method="post" enctype="multipart/form-data">
-        Select file to upload:
-        <input type="file" name="fileToUpload" id="fileToUpload">
-        <input type="submit" value="Upload File" name="submit">
-        </form>
+h2 {
+  color: #333;
+}
 
-    </body>
+form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+label {
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+}
+
+input[type="submit"] {
+  display: block;
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #008CBA;
+  color: white;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h2>File Upload</h2>
+
+  <form action="/upload" method="post" enctype="multipart/form-data">
+    <label for="fileToUpload">Select file to upload:</label>
+    <input type="file" name="fileToUpload" id="fileToUpload">
+    <input type="submit" value="Upload File" name="submit">
+  </form>
+</div>
+
+</body>
 </html>
