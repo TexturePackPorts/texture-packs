@@ -12,8 +12,7 @@ I'm a young developer in hope to learn something while making a project like thi
 
 ## License
 
-This website is licensed under the [MIT] 
-(https://choosealicense.com/licenses/mit/)
+This website is licensed under the [MIT](https://choosealicense.com/licenses/mit/)
  license
 
 ## FAQ
