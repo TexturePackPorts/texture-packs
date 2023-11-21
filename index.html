@@ -1,64 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f0f0f0;
-}
-
-.container {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-h2 {
-  color: #333;
-}
-
-form {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-}
-
-input[type="file"] {
-  display: none;
-}
-
-label {
-  padding: 10px;
-  background-color: #4CAF50;
-  color: white;
-  cursor: pointer;
-}
-
-input[type="submit"] {
-  display: block;
-  margin-top: 20px;
-  padding: 10px;
-  background-color: #008CBA;
-  color: white;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-}
-</style>
+    <title>File List</title>
 </head>
 <body>
+    <h1>Files:</h1>
+    <div id="fileList"></div>
 
-<div class="container">
-  <h2>File Upload</h2>
+    <script>
+        // URL of the folder you want to list files from
+        var folder = "https://example.com/path/to/folder/";
 
-  <form action="/upload" method="post" enctype="multipart/form-data">
-    <label for="fileToUpload">Select file to upload:</label>
-    <input type="file" name="fileToUpload" id="fileToUpload">
-    <input type="submit" value="Upload File" name="submit">
-  </form>
-</div>
-
+        fetch(folder)
+            .then(response => response.text())
+            .then(text => {
+                var parser = new DOMParser();
+                var doc = parser.parseFromString(text, "text/html");
+                var links = Array.from(doc.getElementsByTagName("a"));
+                links.forEach(link => {
+                    if (link.href.startsWith(folder)) {
+                        var listItem = document.createElement("li");
+                        var anchor = document.createElement("a");
+                        anchor.href = link.href;
+                        anchor.textContent = link.textContent;
+                        listItem.appendChild(anchor);
+                        document.getElementById("fileList").appendChild(listItem);
+                    }
+                });
+            });
+    </script>
 </body>
 </html>
