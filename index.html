@@ -7,9 +7,16 @@
             font-family: Arial, sans-serif;
             background-color: #f0f0f0;
             padding: 20px;
+            color: #333;
         }
         h1 {
-            color: #333;
+            font-size: 2.5em;
+            text-align: center;
+            padding: 20px;
+        }
+        p {
+            font-size: 1.2em;
+            text-align: center;
         }
         a {
             display: inline-block;
@@ -19,15 +26,25 @@
             margin: 20px 0;
             text-decoration: none;
             border-radius: 3px;
+            transition: background-color 0.3s ease;
         }
         a:hover {
             background-color: #0056b3;
         }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+        }
     </style>
 </head>
 <body>
-    <h1>All my Texture Pack Ports</h1>
-    <p>Scopes Dark Edit:</p>
-    <a href="scopesdarkedit.html">Download</a>
+    <div class="container">
+        <h1>All my Texture Pack Ports</h1>
+        <p>Scopes Dark Edit:</p>
+        <a href="scopesdarkedit.html">Download</a>
+    </div>
 </body>
 </html>
